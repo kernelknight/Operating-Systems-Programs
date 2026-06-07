@@ -30,6 +30,16 @@ server received: ping abstract namespace
 epoll echo saw: client-1
 ```
 
+## Internet Sockets
+
+```text
+tcp worker echo: alpha
+connected udp echo: udp payload
+resolved loopback stream endpoints=1
+SO_REUSEADDR allowed rebind on loopback port 43127
+client read after half-close: response after EOF
+```
+
 ## Message Queues
 
 ```text
@@ -49,4 +59,15 @@ shared balance=4000 expected=4000
 child mapped sealed config:
 workers=4
 parent still sees: parent-before-fork
+```
+
+## Semaphores And File Locks
+
+```text
+system-v guarded counter=4000 expected=4000
+ping 1
+sem_timedwait expired as expected
+child observed: shared-memory latch released
+second instance rejected by advisory lock
+ofd-locked counter=1500 expected=1500
 ```

@@ -10,8 +10,11 @@ by IPC mechanism and build into separate executables.
 | --- | --- | --- |
 | Pipes | `Pipes/` | anonymous pipes, FIFOs, `poll`, `select`, `splice`, signal self-pipe |
 | Sockets | `Sockets/` | Unix stream sockets, datagrams, `socketpair`, descriptor passing, `epoll` |
+| Internet sockets | `InternetSockets/` | TCP, UDP, `getaddrinfo`, half-close, address reuse, concurrent service |
 | Message queues | `MessageQueues/` | System V queues, POSIX mqueues, typed requests, notification, queue stats |
 | Shared memory | `SharedMemory/` | POSIX shm, `mmap`, process-shared mutexes, memfd sealing, copy-on-write |
+| Semaphores | `Semaphores/` | System V semaphore sets, POSIX named/unnamed semaphores, timed waits |
+| File locking | `FileLocking/` | byte-range locks, lock files, `flock`, OFD locks, ordered acquisition |
 
 ## Quick Start
 
@@ -39,23 +42,29 @@ make clean
 ./bin/Pipes/anonymous_pipeline_exec
 ./bin/Sockets/unix_calc_server /tmp/ipc_calc.sock &
 ./bin/Sockets/unix_calc_client /tmp/ipc_calc.sock "12 * (3 + 4) - 5"
+./bin/InternetSockets/tcp_forking_echo_server
 ./bin/MessageQueues/sysv_priority_workers
 ./bin/SharedMemory/posix_shm_ring_sem
+./bin/Semaphores/posix_named_sem_pingpong
+./bin/FileLocking/fcntl_byte_range_locks
 ```
 
 ## Repository Map
 
 ```text
 .
-├── Makefile
-├── README.md
-├── Common/
-├── docs/
-├── MessageQueues/
-├── Pipes/
-├── scripts/
-├── SharedMemory/
-└── Sockets/
+|-- Makefile
+|-- README.md
+|-- Common/
+|-- docs/
+|-- FileLocking/
+|-- InternetSockets/
+|-- MessageQueues/
+|-- Pipes/
+|-- scripts/
+|-- Semaphores/
+|-- SharedMemory/
+`-- Sockets/
 ```
 
 ## Notes
@@ -63,3 +72,4 @@ make clean
 - Code is written in C11 with GNU/POSIX feature macros for Linux-specific APIs.
 - Each topic folder has a README describing the programs and system calls used.
 - `make` builds every source file into a matching path under `bin/`.
+- GitHub Actions builds all programs and runs the curated demo sequence on Ubuntu.
