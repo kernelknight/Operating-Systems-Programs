@@ -15,6 +15,7 @@ by IPC mechanism and build into separate executables.
 | Shared memory | `SharedMemory/` | POSIX shm, `mmap`, process-shared mutexes, memfd sealing, copy-on-write |
 | Semaphores | `Semaphores/` | System V semaphore sets, POSIX named/unnamed semaphores, timed waits |
 | File locking | `FileLocking/` | byte-range locks, lock files, `flock`, OFD locks, ordered acquisition |
+| Alternative I/O | `AlternativeIO/` | `select`, `poll`, `epoll`, `signalfd`, `eventfd` |
 
 ## Quick Start
 
@@ -56,6 +57,7 @@ make clean
 |-- Makefile
 |-- README.md
 |-- Common/
+|-- AlternativeIO/
 |-- docs/
 |-- FileLocking/
 |-- InternetSockets/

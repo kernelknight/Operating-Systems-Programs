@@ -20,6 +20,16 @@ zero-copy splice moves bytes through a pipe buffer
 main loop handled signal 10 outside handler
 ```
 
+## Alternative I/O
+
+```text
+ready via select
+poll saw pipe-1
+edge-triggered epoll
+signalfd received signo=10 pid=2400
+eventfd counter=5
+```
+
 ## Sockets
 
 ```text

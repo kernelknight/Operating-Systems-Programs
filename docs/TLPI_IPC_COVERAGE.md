@@ -19,6 +19,7 @@ design, and alternative I/O models.
 | File locking | `FileLocking/` | advisory locks, lock files, byte-range locks, OFD locks |
 | Semaphores | `Semaphores/` | System V semaphores, POSIX named semaphores, timed waits, barriers |
 | Internet sockets | `InternetSockets/` | TCP/UDP clients and servers, concurrent service patterns, socket options |
+| Alternative I/O | `AlternativeIO/` | `select`, `poll`, `epoll`, `signalfd`, `eventfd` |
 
 ## Documentation Rule
 

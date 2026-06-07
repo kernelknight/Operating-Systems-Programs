@@ -24,6 +24,7 @@ The generated executables are placed in matching paths under `bin/`.
 
 ```text
 bin/Pipes/anonymous_pipeline_exec
+bin/AlternativeIO/eventfd_counter
 bin/Sockets/socketpair_fd_passing
 bin/InternetSockets/tcp_forking_echo_server
 bin/MessageQueues/sysv_priority_workers
@@ -45,6 +46,12 @@ make demo
 ./bin/Pipes/fifo_select_chat
 ./bin/Pipes/splice_zero_copy_pipe
 ./bin/Pipes/self_pipe_signal_reactor
+
+./bin/AlternativeIO/select_timeout_pipe
+./bin/AlternativeIO/poll_many_pipes
+./bin/AlternativeIO/epoll_edge_triggered_pipe
+./bin/AlternativeIO/signalfd_sigusr1
+./bin/AlternativeIO/eventfd_counter
 
 ./bin/Sockets/socketpair_fd_passing
 ./bin/Sockets/unix_dgram_logger
