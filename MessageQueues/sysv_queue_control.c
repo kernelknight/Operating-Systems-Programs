@@ -27,8 +27,8 @@ int main(void)
     if (msgctl(qid, IPC_STAT, &ds) == -1) {
         die_errno("msgctl IPC_STAT");
     }
-    printf("queue-id=%d messages=%lu bytes=%lu\n",
-           qid, (unsigned long)ds.msg_qnum, (unsigned long)ds.__msg_cbytes);
+    printf("queue-id=%d messages=%lu max-bytes=%lu\n",
+           qid, (unsigned long)ds.msg_qnum, (unsigned long)ds.msg_qbytes);
 
     msgctl(qid, IPC_RMID, NULL);
     return 0;
