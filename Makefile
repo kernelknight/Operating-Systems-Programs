@@ -5,7 +5,7 @@ LDLIBS ?= -pthread -lrt
 
 BIN_DIR := bin
 COMMON := Common/common.c
-SOURCES := $(shell find Pipes Sockets MessageQueues SharedMemory Semaphores FileLocking InternetSockets AlternativeIO -name '*.c' 2>/dev/null | sort)
+SOURCES := $(shell find Pipes Sockets MessageQueues SharedMemory Semaphores FileLocking InternetSockets AlternativeIO Signals -name '*.c' 2>/dev/null | sort)
 PROGRAMS := $(patsubst %.c,$(BIN_DIR)/%,$(SOURCES))
 
 .PHONY: all demo clean

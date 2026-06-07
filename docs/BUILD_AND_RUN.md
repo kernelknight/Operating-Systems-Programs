@@ -31,6 +31,7 @@ bin/MessageQueues/sysv_priority_workers
 bin/SharedMemory/process_shared_mutex
 bin/Semaphores/posix_named_sem_pingpong
 bin/FileLocking/fcntl_byte_range_locks
+bin/Signals/sigaction_restart_demo
 ```
 
 ## Run Full Demo
@@ -52,6 +53,14 @@ make demo
 ./bin/AlternativeIO/epoll_edge_triggered_pipe
 ./bin/AlternativeIO/signalfd_sigusr1
 ./bin/AlternativeIO/eventfd_counter
+
+./bin/Signals/sigaction_restart_demo
+./bin/Signals/signal_mask_pending
+./bin/Signals/sigqueue_payload
+./bin/Signals/sigchld_supervisor
+./bin/Signals/sigsuspend_wait
+./bin/Signals/realtime_signal_order
+./bin/Signals/altstack_segv_recovery
 
 ./bin/Sockets/socketpair_fd_passing
 ./bin/Sockets/unix_dgram_logger

@@ -16,6 +16,7 @@ by IPC mechanism and build into separate executables.
 | Semaphores | `Semaphores/` | System V semaphore sets, POSIX named/unnamed semaphores, timed waits |
 | File locking | `FileLocking/` | byte-range locks, lock files, `flock`, OFD locks, ordered acquisition |
 | Alternative I/O | `AlternativeIO/` | `select`, `poll`, `epoll`, `signalfd`, `eventfd` |
+| Signals | `Signals/` | `sigaction`, masks, `sigqueue`, `SIGCHLD`, `sigsuspend`, realtime signals |
 
 ## Quick Start
 
@@ -66,6 +67,7 @@ make clean
 |-- scripts/
 |-- Semaphores/
 |-- SharedMemory/
+|-- Signals/
 `-- Sockets/
 ```
 

@@ -30,6 +30,18 @@ signalfd received signo=10 pid=2400
 eventfd counter=5
 ```
 
+## Signals
+
+```text
+handled=1 read resumed after signal
+pending-before-unblock=1 delivered=0
+sigqueue payload=4096
+supervisor reaped pid=2501 status=30
+sigsuspend observed SIGUSR1 atomically
+realtime values=100,101,102
+SIGSEGV handled on alternate signal stack
+```
+
 ## Sockets
 
 ```text

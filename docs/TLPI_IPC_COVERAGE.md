@@ -20,6 +20,7 @@ design, and alternative I/O models.
 | Semaphores | `Semaphores/` | System V semaphores, POSIX named semaphores, timed waits, barriers |
 | Internet sockets | `InternetSockets/` | TCP/UDP clients and servers, concurrent service patterns, socket options |
 | Alternative I/O | `AlternativeIO/` | `select`, `poll`, `epoll`, `signalfd`, `eventfd` |
+| Signals | `Signals/` | handlers, masks, pending sets, queued payloads, child notification, realtime signals |
 
 ## Documentation Rule
 
